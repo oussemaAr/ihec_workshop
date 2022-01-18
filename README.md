@@ -1,4 +1,4 @@
-# ihec_workshop
+# IHEC workshop
 
 A new Flutter project.
 

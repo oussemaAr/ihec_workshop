@@ -1,6 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'package:ihec_workshop/widgets/ihec.componenets.dart';
 
 class MyCard extends StatelessWidget {
   @override
@@ -10,9 +9,11 @@ class MyCard extends StatelessWidget {
         child: Container(
           color: Colors.teal,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const CircleAvatar(
-                backgroundImage: AssetImage('images/image.jpg'),
+                backgroundImage: AssetImage('images/me.jpg'),
                 radius: 60,
               ),
               informationText('Oussema AROUA', 36),
@@ -23,45 +24,12 @@ class MyCard extends StatelessWidget {
                 onPressed: () {
                   print('MESSAGE');
                 },
-                child: Icon(
+                child: const Icon(
                   Icons.local_play_rounded,
                 ),
               )
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget informationText(String contentText, double contentFontSize) {
-    return Text(
-      contentText,
-      style: TextStyle(
-          fontFamily: 'AdventPro',
-          fontSize: contentFontSize,
-          color: Colors.white,
-          letterSpacing: 2),
-    );
-  }
-
-  informationCard(String informationContent, IconData informationIcon) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Row(
-          children: [
-            Icon(
-              informationIcon,
-              color: Colors.blueGrey,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 16,
-              ),
-              child: Text(informationContent),
-            )
-          ],
         ),
       ),
     );

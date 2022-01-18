@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 class WonderScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return WonderScreenState();
+    return _WonderScreenState();
   }
 }
 
-class WonderScreenState extends State<WonderScreen>
+class _WonderScreenState extends State<WonderScreen>
     with SingleTickerProviderStateMixin {
   var position = 0;
 
@@ -34,39 +34,42 @@ class WonderScreenState extends State<WonderScreen>
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Column(
-      children: [
-        SizedBox(
-          width: 200,
-          height: 200,
-          child: Image.asset(
-            'images/${imagesList[position]}',
-          ),
-        ),
-        Text(imagesList[position]),
-        ElevatedButton(
-          onPressed: () {
-            setState(() {
-              position = Random().nextInt(6);
-              print("new value = $position");
-            });
-          },
-          child: const Text(
-            'Load Random Wonder',
-          ),
-        ),
-        ElevatedButton(
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(
-              Colors.blueGrey,
+      child: Column(
+        children: [
+          SizedBox(
+            width: 200,
+            height: 200,
+            child: Image.asset(
+              'images/${imagesList[position]}',
             ),
           ),
-          onPressed: () {},
-          child: const Text(
-            'Load Random Wonder',
+          Text(imagesList[position]),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                position = Random().nextInt(6);
+                print("new value = $position");
+              });
+            },
+            child: const Text(
+              'Load Random Wonder',
+            ),
           ),
-        )
-      ],
-    ));
+          ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(
+                Colors.blueGrey,
+              ),
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, '/my_card', arguments: 'Tester');
+            },
+            child: const Text(
+              'See more informations',
+            ),
+          )
+        ],
+      ),
+    );
   }
 }

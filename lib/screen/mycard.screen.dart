@@ -5,7 +5,6 @@ class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as String;
-    print(args);
 
     return Material(
       child: SafeArea(

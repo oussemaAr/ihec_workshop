@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ihec_workshop/screen/mycard.screen.dart';
+import 'package:ihec_workshop/screen/mylistview.screen.dart';
 import 'package:ihec_workshop/screen/wonder.screen.dart';
 
 void main() {
@@ -9,7 +10,8 @@ void main() {
       initialRoute: '/',
       routes: {
         '/my_card': (context) => MyCard(),
-        '/': (context) => WonderScreen()
+        '/wonder': (context) => WonderScreen(),
+        '/': (context) => MyListView()
       },
     ),
   );
